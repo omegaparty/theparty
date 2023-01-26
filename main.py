@@ -35,7 +35,32 @@ def sex_count():
     print('Total Males {}'.format(male))
     print('Total Females {}'.format(female))
 
+def smoker_cost():
+    smoking_cost = []
+    non_smoking_cost = []
+    index = 0
+    total_smokers = []
+    total_non_smokers = []
+    
+
+    for status in smoker:
+        if 'yes' in status:
+            smoking_cost += charges[index]
+            total_smokers += 1
+            index += 1
+        else:
+            non_smoking_cost += charges[index]
+            total_non_smokers += 1
+            index += 1
+    avg_cost_smoker = smoking_cost/total_smokers
+    avg_cost_non = non_smoking_cost/total_non_smokers
+
+    print('The average cost for a smoker = {}'.format(round(avg_cost_smoker),2))
+    print('The average cost for a non smoker = {}'.format(round(avg_cost_non),2))
+
+
+
+
 average_age()
 sex_count()
-
-
+smoker_cost()
